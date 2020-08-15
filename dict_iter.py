@@ -49,7 +49,20 @@ dict_tuples = dict(list_tuples)
 print(dict_tuples)
 
 # function to get keys
-def get_keys(**kw):
-    print(f' kw.keys {kw.keys()} ')
+# def get_keys(**kw):
+#     print(f' kw.keys {kw.keys()} ')
 
-get_keys( a=1, b=2)  # kw.keys dict_keys(['a', 'b'])
+# get_keys( a=1, b=2)  # kw.keys dict_keys(['a', 'b'])
+
+dict_merge2 = dict_merge.copy()  # makes copy
+print(dict_merge2)
+dict_merge3 = dict( (k,v) for k,v in dict_merge.items() )
+
+
+def get_kv(**kw):
+    # kv_pairs = dict(kv.items())
+    for k,v in dict(kv.items()):
+        print(f' key {k} value {v}')
+
+get_kv(dict_merge2)
+        
