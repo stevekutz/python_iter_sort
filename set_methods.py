@@ -107,18 +107,38 @@ print(f' ADD   now set2 is {set2}')    # ex   ADD   now set2 is {88, '1', '3', '
 e_set.add(99)
 print(f' ADD set_list ex {set2}, e_set ALWAYS in same order  e_set {e_set}')  #  ADD set_list ex {88, '1', '2', '3'}, e_set ALWAYS in same order  e_set {88, 99, (0, 1, 2)}  
 
-# !!!!!!  UPDATE  >> append multiple items, CAN add as TUPLE
-e_set.update( (11, 22) )
-print(f' UPDATE e_set : {e_set} ')   # UPDATE e_set : {99, (0, 1, 2), 11, 22, 88}
+##  ADD   !!!  we can add list using a  for loop
+test_list = [0,1,2,3]
+set4 = {10,20}
 
-### !!! UPDATE >> allows adding lists & sets  BUT only takes key from dict (trie to CONVERT to an iterable sequence ) !!
-list_1 = ['a', 'b']
-list_2 = [10, 20 ,30]
-dict_1 = {'first': 'ONE', 'second': 'TWO'}
-set_u = {-1,-2}
+for item in test_list:
+    set4.add(item)
 
-# UPDATE showing adding of lists, dict keys, and another set
-e_set2 = set()
-e_set2.update(list_1,list_2, dict_1, set_u)
-print(f' UPDATE e_set2  {e_set2}')   # UPDATE e_set2  {'first', 10, 'b', 'second', 20, 'a', -1, -2, 30}
+print(f' ADD adding LIST using for loop  {set4}')     # ADD adding LIST using for loop  {0, 1, 2, 3, 10, 20}
 
+# SET COMPREHENSION !!!!
+test_list = [0,1,2,3]
+set4 = {10,20}
+{set4.add(s) for s in test_list}
+print(f' >>>  set_4 {set4}')
+
+
+
+
+# # !!!!!!  UPDATE  >> append multiple items, CAN add as TUPLE
+# e_set.update( (11, 22) )
+# print(f' UPDATE e_set : {e_set} ')   # UPDATE e_set : {99, (0, 1, 2), 11, 22, 88}
+
+# ### !!! UPDATE >> allows adding lists & sets  BUT only takes key from dict (trie to CONVERT to an iterable sequence ) !!
+# list_1 = ['a', 'b']
+# list_2 = [10, 20 ,30]
+# dict_1 = {'first': 'ONE', 'second': 'TWO'}
+# set_u = {-1,-2}
+
+# # UPDATE showing adding of lists, dict keys, and another set
+# e_set2 = set()
+# e_set2.update(list_1,list_2, dict_1, set_u)
+# print(f' UPDATE e_set2  {e_set2}')   # UPDATE e_set2  {'first', 10, 'b', 'second', 20, 'a', -1, -2, 30}
+
+# # .subset    tests if  set is subset
+# print(f' set_u.issubset(e_set2) {set_u.issubset(e_set2)}')   # set_u.issubset(e_set2) True
