@@ -30,7 +30,7 @@ test_set = {100, 200}
 # print(f' my_set  {my_set}')   # TypeError: unhashable type: 'set'
 
 
-# CREAT a set with nums, tuple, and str
+# CREATE a set with nums, tuple, and str
 my_set = {1, 2, 3, (100, 200), 'apple'}
 print(f' my_set is {my_set} ') #  my_set is {1, 2, 3, (100, 200), 'apple'}
 
@@ -50,8 +50,11 @@ print(f' set_f_1: {set_f_1}' )   # {'d', 'e', 'n'}
 set_f_2 = set('122232344455431')   
 print(f'  set_f_2 is {set_f_2} ' )   # {'4', '1', '3', '2', '5'}
 
-# ERROR # set_f_3 = set(1122)
+######   ERROR if quotes notes used with set() function 
+# # set_f_3 = set(1122)
 # print(f'  set_f_3 is {set_f_3} ')  # TypeError: 'int' object is not iterable
+# set_f_3 = set(abcd)
+# print(f'  set_f_3 is {set_f_3} ')   #   NameError: name 'abcd' is not defined
 
 set_f_4 = set((11,22))
 print(f'  set_f_4 is {set_f_4}')   # set_f_4 is {11, 22}
@@ -131,7 +134,9 @@ print(f' set a >>  {a}')    # set a >>  {'r', 'd'}
 
 #### create set of values in given string that are in another string
 test_str = "abcde"
-set_ch = {'c', 'e'}
+# set_ch = {'c', 'e'}
+set_ch = set('ch')
+print(f' set_ch is {set_ch}')
 b = {ch for ch in test_str if ch not in set_ch}
 print(f" b is >> {b}")  # b is >> {'a', 'd', 'b'}
 
