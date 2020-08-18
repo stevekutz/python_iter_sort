@@ -116,20 +116,31 @@ for item in test_list:
 
 print(f' ADD adding LIST using for loop  {set4}')     # ADD adding LIST using for loop  {0, 1, 2, 3, 10, 20}
 
-# SET COMPREHENSION !!!!
+########## SET COMPREHENSION !!!!
 test_list = [0,1,2,3]
 set4 = {10,20}
-{set4.add(s) for s in test_list}
-print(f' >>>  set_4 {set4}')
+#### add list item by item into set
+# {set4.add(s) for s in test_list}
+# print(f' >>>  set_4 {set4}')   # >>>  set_4 {0, 1, 2, 3, 10, 20}
 
 
+#### create set of values in given string that are in another string
+a = {x for x in 'abracadabra' if x not in 'abc'}
+print(f' set a >>  {a}')    # set a >>  {'r', 'd'}
+
+
+#### create set of values in given string that are in another string
+test_str = "abcde"
+set_ch = {'c', 'e'}
+b = {ch for ch in test_str if ch not in set_ch}
+print(f" b is >> {b}")  # b is >> {'a', 'd', 'b'}
 
 
 # # !!!!!!  UPDATE  >> append multiple items, CAN add as TUPLE
 # e_set.update( (11, 22) )
 # print(f' UPDATE e_set : {e_set} ')   # UPDATE e_set : {99, (0, 1, 2), 11, 22, 88}
 
-# ### !!! UPDATE >> allows adding lists & sets  BUT only takes key from dict (trie to CONVERT to an iterable sequence ) !!
+# ### !!! UPDATE >> allows adding lists & sets  BUT only takes key from dict (tried to CONVERT to an iterable sequence ) !!
 # list_1 = ['a', 'b']
 # list_2 = [10, 20 ,30]
 # dict_1 = {'first': 'ONE', 'second': 'TWO'}
@@ -142,3 +153,11 @@ print(f' >>>  set_4 {set4}')
 
 # # .subset    tests if  set is subset
 # print(f' set_u.issubset(e_set2) {set_u.issubset(e_set2)}')   # set_u.issubset(e_set2) True
+
+
+# Redfine set 
+test_set = {0,1,2}
+print(f' test_set {test_set} ')
+# verify if item is in set
+print(f"  '2' in test_set  {'2' in test_set} ")   # '2' in test_set  False 
+print(f" 2 in test_set {2 in test_set} ")   #    2 in test_set True
