@@ -29,7 +29,8 @@ test_set = {100, 200}
 # my_set = { 1, 2, 3, 4, test_set}
 # print(f' my_set  {my_set}')   # TypeError: unhashable type: 'set'
 
-# create a set with nums, tuple, and str
+
+# CREAT a set with nums, tuple, and str
 my_set = {1, 2, 3, (100, 200), 'apple'}
 print(f' my_set is {my_set} ') #  my_set is {1, 2, 3, (100, 200), 'apple'}
 
@@ -49,9 +50,13 @@ print(f' set_f_1: {set_f_1}' )   # {'d', 'e', 'n'}
 set_f_2 = set('122232344455431')   
 print(f'  set_f_2 is {set_f_2} ' )   # {'4', '1', '3', '2', '5'}
 
-
 # ERROR # set_f_3 = set(1122)
 # print(f'  set_f_3 is {set_f_3} ')  # TypeError: 'int' object is not iterable
+
+set_f_4 = set((11,22))
+print(f'  set_f_4 is {set_f_4}')   # set_f_4 is {11, 22}
+
+
 
 # ERROR
 #  set_f_2 = set(1)   #     TypeError: 'int' object is not iterable
@@ -80,22 +85,40 @@ print(f" 'a' in set_f_1: {'a' in set_f_1} ")  # 'a' in set_f_1: False
 e_set = set()
 print(f' e_set is an empty set {e_set} of type {type(e_set)} ')
 
-# !!!!!! CANNOT   Add to empty set
+# !!!!!! Add to empty set
 e_set.add(88)
-e_set = e_set.add(99)
-print(f' ADD e_set {e_set}')  #  ADD e_set None
+print(f' ADD e_set {e_set}')  #  ADD e_set {88}
 
+##  ERROR !!! with .add   >>  CAN ONLY add one at a time
+# e_set.add(1000,2000)
+# print(f' ANOTHER ADD e_set {e_set}')   # TypeError: add() takes exactly one argument (2 given)
+
+e_set.add((0,1,2))
+print(f' Yet ANOTHER ADD e_set {e_set}')  #  ANOTHER ADD e_set {88, (0, 1, 2)}
 
 # !!!! Sets not iterable, what is returned by print CAN have different order, depends how it is hashed
 set2 = set('1233')
-set3 = {1,2,3,4,3,3}
+set3 = {1,2,3,4,3,3,0}
 print(f' set2 is {set2} ')  # ex set2 is {'1', '3', '2'}   OR  {'2', '1', '3'}   OR   {'2', '3', '1'}, etc.
-print(f' set3 is {set3} ')  # set3 is {1, 2, 3, 4}
-set2.add(88)
-print(f' ADD   now set2 is {set2}')    # print(f' ADD   now set2 is {set2}')
-# e_set.add(99)
-# print(f' ADD set_list {set2}  e_set {e_set}')  #  ADD set_list None  e_set None
+print(f' set3 is {set3} ')  # ALWAYS returns  set3 is {0, 1, 2, 3, 4} 
+set2.add(88)          # ex 
+print(f' ADD   now set2 is {set2}')    # ex   ADD   now set2 is {88, '1', '3', '2'}
 
-# !!!!!!  CANNOT    YOU can add list to empty set using update method
-# set_list = e_set.update([11, 222])
-# print(f' UPDATE set_list : {set_list} ')   # UPDATE set_list : None
+e_set.add(99)
+print(f' ADD set_list ex {set2}, e_set ALWAYS in same order  e_set {e_set}')  #  ADD set_list ex {88, '1', '2', '3'}, e_set ALWAYS in same order  e_set {88, 99, (0, 1, 2)}  
+
+# !!!!!!  UPDATE  >> append multiple items, CAN add as TUPLE
+e_set.update( (11, 22) )
+print(f' UPDATE e_set : {e_set} ')   # UPDATE e_set : {99, (0, 1, 2), 11, 22, 88}
+
+### !!! UPDATE >> allows adding lists & sets  BUT only takes key from dict (trie to CONVERT to an iterable sequence ) !!
+list_1 = ['a', 'b']
+list_2 = [10, 20 ,30]
+dict_1 = {'first': 'ONE', 'second': 'TWO'}
+set_u = {-1,-2}
+
+# UPDATE showing adding of lists, dict keys, and another set
+e_set2 = set()
+e_set2.update(list_1,list_2, dict_1, set_u)
+print(f' UPDATE e_set2  {e_set2}')   # UPDATE e_set2  {'first', 10, 'b', 'second', 20, 'a', -1, -2, 30}
+
