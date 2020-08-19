@@ -5,6 +5,7 @@
 
 # CREATE    EMPTY SET
 new_set = set()
+print(f' bool of empty set {bool(new_set)}')
 print(f' new_set is an empty set:  {new_set}')  # new_set is an empty set:  set()
 
 # CREATE set using curly craces
@@ -14,7 +15,10 @@ print(f'type(my_dict)  {type(my_dict)}  ')
 my_list = [10, 20]
 
 test_set = {100, 200}
+print(test_set)
 
+dict_set = {1: {1,2}, 2: {3}}
+print(f' dict_set[2] is {dict_set[2]}')   # dict_set[2] is {3}
 
 ###### These all create ERRORS
 # CANNOT create set wtih dict item
