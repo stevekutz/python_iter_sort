@@ -3,10 +3,15 @@
 
 my_list = [2, 7, 6, 4, 9, 1 , 0]
 print(f' Original list  {my_list}')
+# Original list  [2, 7, 6, 4, 9, 1, 0]
 
 my_list.sort()  # changes original list (modifies list IN_PLACE  & returns None)
 print(f' AFTER calling .sort {my_list}' )
+# AFTER calling .sort [0, 1, 2, 4, 6, 7, 9]
 
+my_list.sort(reverse = True)  # changes original list (modifies list IN_PLACE  & returns None)
+print(f' AFTER calling .sort  with reverse True {my_list}' )
+# AFTER calling .sort  with reverse True [9, 7, 6, 4, 2, 1, 0]
 
 ###################
 # sorted() function accepts ANY ITERABLE and returns sorted list
@@ -92,7 +97,39 @@ sorted_my_list_tup = sorted(my_list_tup,  key = lambda  tup : (tup[1], tup[2]) )
 print(f' sorted_my_list_tup  {sorted_my_list_tup} ')
 
 
+#######################################    obj with named attributes
+class Student:    
+    def __init__(self, name, grade, age):
+        self.name = name
+        self.grade = grade
+        self.age = age
 
+    def __repr__(self):
+        return repr((self.name, self.grade, self.age))
+
+student_objects = [
+    Student('john', 'A', 15),
+    Student('jane', 'B', 12),
+    Student('dave', 'B', 10),
+    Student('todd', 'A', 14),
+    Student('jackie', 'C', 10),
+]
+
+# sort objects by age property
+sorted_obj = sorted(student_objects, key = lambda obj : obj.age)
+print(f' sorted_obj  {sorted_obj}')
+# sorted_obj [('dave', 'B', 10), ('jackie', 'C', 10), ('jane', 'B', 12), ('todd', 'A', 14), ('john', 'A', 15)]
+
+# sort objects by grade, then age   
+sorted_obj = sorted(student_objects, key = lambda obj : (obj.grade, obj.age) )
+print(f' sorted_obj {sorted_obj}')
+# sorted_obj [('todd', 'A', 14), ('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12), ('jackie', 'C', 10)]
+
+# sort objects by age, then grade using    >>  attrgetter
+from operator import itemgetter, attrgetter
+sorted_obj = sorted(student_objects, key = attrgetter('grade', 'age'))
+print(f' sorted_obj {sorted_obj}')
+# sorted_obj [('todd', 'A', 14), ('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12), ('jackie', 'C', 10)]
 
 
 # ###########################
