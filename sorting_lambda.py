@@ -22,6 +22,19 @@ print(f' Original list  {my_list}')
 print(f' sorted_my_list {sorted_my_list} \n')
 
 
+######################   string items
+str = '1 100 10 1000'
+split_str = str.split()
+print(f' split_str {split_str}')
+#  split_str ['1', '100', '10', '1000']
+sorted_str = sorted(split_str)
+print(f' sorted_str  {sorted_str}')
+#  sorted_str  ['1', '10', '100', '1000']
+
+ 
+
+
+
 
 ###############     dict sorting 
 my_dict = {1 : "B", 2: 'E', 0 : 'G'}
@@ -94,7 +107,20 @@ print(f' sorted_my_list_tup  {sorted_my_list_tup} ')
 
  # sort by tuple location in element          >>> sorted by letter then number
 sorted_my_list_tup = sorted(my_list_tup,  key = lambda  tup : (tup[1], tup[2]) )
-print(f' sorted_my_list_tup  {sorted_my_list_tup} ')
+print(f' sorted_my_list_tup  {sorted_my_list_tup} \n')
+
+
+####################   itemgetter
+from operator import itemgetter               
+
+# sort by 2nd tuple         sorts by leetter
+sorted_my_list_tup = sorted(my_list_tup, key = itemgetter(1))
+print(f'>> sorted_my_list_tup    {sorted_my_list_tup}')
+# >> sorted_my_list_tup    [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10), ('jackie', 'C', 10)]
+
+# sort by 2nd then 3rd tuple
+sorted_my_list_tup = sorted(my_list_tup, key = itemgetter(1,2))
+print(f' >> sorted_my_list_tup   {sorted_my_list_tup} ')
 
 
 #######################################    obj with named attributes
@@ -125,8 +151,9 @@ sorted_obj = sorted(student_objects, key = lambda obj : (obj.grade, obj.age) )
 print(f' sorted_obj {sorted_obj}')
 # sorted_obj [('todd', 'A', 14), ('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12), ('jackie', 'C', 10)]
 
-# sort objects by age, then grade using    >>  attrgetter
-from operator import itemgetter, attrgetter
+# sort objects by age, then grade using    >>>>>>>>>>  attrgetter 
+from operator import attrgetter
+
 sorted_obj = sorted(student_objects, key = attrgetter('grade', 'age'))
 print(f' sorted_obj {sorted_obj}')
 # sorted_obj [('todd', 'A', 14), ('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12), ('jackie', 'C', 10)]
