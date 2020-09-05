@@ -9,13 +9,16 @@ print(f' AFTER calling .sort {my_list}' )
 
 
 ###################
-# sorted() function accepts ANY ITERABLE adn returns sorted list
+# sorted() function accepts ANY ITERABLE and returns sorted list
 my_list  =  [2, 7, 6, 4, 9, 1 , 0]
 
 sorted_my_list = sorted(my_list)
 print(f' Original list  {my_list}')
 print(f' sorted_my_list {sorted_my_list} \n')
 
+
+
+###############     dict sorting 
 my_dict = {1 : "B", 2: 'E', 0 : 'G'}
 sorted_dict = sorted(my_dict, reverse = True)
 print(f' my_dict  {my_dict}')
@@ -28,6 +31,8 @@ print(f' my_dict  {my_dict}')
 print(f' sorted_dict_values {sorted_dict_values} \n\n')
 #  my_dict  {1: 'B', 2: 'E', 0: 'G'}
 #  sorted_dict_values ['B', 'E', 'G']
+
+
 
 sorted_dict_items = sorted(my_dict.items())
 print(f' my_dict  {my_dict}')
@@ -48,6 +53,47 @@ print(f' my_dict  {my_dict}')
 print(f' sorted_dict {sorted_dict} \n\n')
 #  my_dict  {1: 'B', 2: 'E', 0: 'G'}
 #  sorted_dict {1: 'B', 2: 'E', 0: 'G'} 
+
+
+##########################################  sets
+my_set = set('1572')
+print(f' my_set {my_set}')
+
+sorted_set = sorted(my_set)
+print(f' sorted_set {sorted_set} ')
+
+fl_list = [ '0.123', '4.239', '2.2093', '-.092']
+my_f_set = set(fl_list)
+print(f' my_f_set {my_f_set }')
+sorted_f_set = sorted(my_f_set)
+print(f' sorted_f_set { sorted_f_set}')
+
+
+#########################################   list of tuples
+my_list_tup = [
+    ('john', 'A', 15),
+    ('jane', 'B', 12),
+    ('dave', 'B', 10),
+    ('jackie', 'C', 10)
+]
+ # sort by tuple location in element          >>> sorted by name
+sorted_my_list_tup = sorted(my_list_tup,  key = lambda  tup : tup[0])
+print(f' sorted_my_list_tup  {sorted_my_list_tup} ')
+# sorted_my_list_tup  [('dave', 'B', 10), ('jackie', 'C', 10), ('jane', 'B', 12), ('john', 'A', 15)]
+
+
+ # sort by tuple location in element          >>> sorted by letter
+sorted_my_list_tup = sorted(my_list_tup,  key = lambda  tup : tup[1])
+print(f' sorted_my_list_tup  {sorted_my_list_tup} ')
+#  sorted_my_list_tup  [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10), ('jackie', 'C', 10)] 
+
+ # sort by tuple location in element          >>> sorted by letter then number
+sorted_my_list_tup = sorted(my_list_tup,  key = lambda  tup : (tup[1], tup[2]) )
+print(f' sorted_my_list_tup  {sorted_my_list_tup} ')
+
+
+
+
 
 # ###########################
 # # a lambda in Python is just an anonymous function that has one or more arguments, but only one expression.
