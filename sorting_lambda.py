@@ -121,7 +121,7 @@ print(f'>> sorted_my_list_tup    {sorted_my_list_tup}')
 # sort by 2nd then 3rd tuple
 sorted_my_list_tup = sorted(my_list_tup, key = itemgetter(1,2))
 print(f' >> sorted_my_list_tup   {sorted_my_list_tup} ')
-
+# sorted_my_list_tup   [('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12), ('jackie', 'C', 10)]
 
 #######################################    obj with named attributes
 class Student:    
