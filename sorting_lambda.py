@@ -1,6 +1,8 @@
 ###################
 # list   .sort method only works for lists
 
+
+print(f' .sort method only works for lists')
 my_list = [2, 7, 6, 4, 9, 1 , 0]
 print(f' Original list  {my_list}')
 # Original list  [2, 7, 6, 4, 9, 1, 0]
@@ -15,6 +17,7 @@ print(f' AFTER calling .sort  with reverse True {my_list}' )
 
 ###################
 # sorted() function accepts ANY ITERABLE and returns sorted list
+print(f' sorted handles any iterable and returns sorted list')
 my_list  =  [2, 7, 6, 4, 9, 1 , 0]
 
 sorted_my_list = sorted(my_list)
@@ -36,14 +39,20 @@ print(f' sorted_str  {sorted_str}')
 
 
 
-###############     dict sorting 
+###############     dict sorting  by KEYS 
 my_dict = {1 : "B", 2: 'E', 0 : 'G'}
-sorted_dict = sorted(my_dict, reverse = True)
+sorted_dict_k = sorted(my_dict, reverse = True)
+sorted_dict_k2 = sorted(my_dict.keys(), reverse = True)
+
+print(f' *** return list of sorted dict keys in reverse, .keys() is optional')
 print(f' my_dict  {my_dict}')
-print(f' sorted_dict {sorted_dict} \n\n')
+print(f' >> keys   sorted_dict_k {sorted_dict_k} ')
+print(f' >> keys  sorted_dict_k2 {sorted_dict_k2} \n\n')
+
 #  my_dict  {1: 'B', 2: 'E', 0: 'G'}
 #  sorted_dict [2, 1, 0]
 
+print(f' *** return list of sorted dict values ')
 sorted_dict_values = sorted(my_dict.values())
 print(f' my_dict  {my_dict}')
 print(f' sorted_dict_values {sorted_dict_values} \n\n')
@@ -111,9 +120,12 @@ print(f' sorted_my_list_tup  {sorted_my_list_tup} \n')
 
 
 ####################   itemgetter
-from operator import itemgetter               
+from operator import itemgetter   
+# Return a callable object that fetches item from its operand using the operand’s __getitem__() method. 
+# If multiple items are specified, returns a tuple of lookup values
 
-# sort by 2nd tuple         sorts by leetter
+
+# sort by 2nd tuple         sorts by letter
 sorted_my_list_tup = sorted(my_list_tup, key = itemgetter(1))
 print(f'>> sorted_my_list_tup    {sorted_my_list_tup}')
 # >> sorted_my_list_tup    [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10), ('jackie', 'C', 10)]

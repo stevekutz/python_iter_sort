@@ -70,6 +70,8 @@ list_str = ['first', 'second', 'third', 'fourth']
 list_nums2 = [1, 2, 3, 4]
 
 zipObj = zip(list_str, list_nums2)   # iterates through list and returns tuples
+print(f' zipObj {zipObj}')
+
 dict_merge = dict(zipObj)
 print(f' dict_merge {dict_merge}')      # dict_merge {'first': 1, 'second': 2, 'third': 3, 'fourth': 4}
 

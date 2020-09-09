@@ -32,8 +32,10 @@ print(f' hex(10)  {hex(10)}')  # 0xa
 
 bin_a = 0b10001001
 shift_right = bin_a >> 1
-print(f' shift_right {bin(shift_right)}')
+print(f' orig {bin(bin_a)}  shift_right {bin(shift_right)}')
 
 
 print(f' str(bin_a)[0]  {str(bin_a)[0]} {type(str(bin_a)[0])}')
 print(f' int(str(bin_a)[0])  {int(str(bin_a)[0])} {type(int(str(bin_a)[0]))}')
+
+print(f' bin(bin_a)  {bin(bin_a)} {type(str(bin_a))}')
