@@ -121,9 +121,10 @@ print(f' sorted_my_list_tup  {sorted_my_list_tup} \n')
 
 ####################   itemgetter
 from operator import itemgetter   
+# itemgetter
 # Return a callable object that fetches item from its operand using the operand’s __getitem__() method. 
 # If multiple items are specified, returns a tuple of lookup values
-
+#### >>> Itemgetter can be used instead of lambda function to achieve the similar functionality
 
 # sort by 2nd tuple         sorts by letter
 sorted_my_list_tup = sorted(my_list_tup, key = itemgetter(1))
