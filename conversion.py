@@ -73,7 +73,45 @@ def bit_set(bin_val, position = None):
 # bit at pos 6 is 0
 # bit at pos 7 is 1
 
-for i in range(8):
-    print(f' bit at pos {i} is {bit_set(bit_p2, i)}')   # bit_p2 =0b01010100
+# for i in range(8):
+#     print(f' bit at pos {i} is {bit_set(bit_p2, i)}')   # bit_p2 =0b01010100
 
-print(f' 0b010 {0b0000010}')
+# print(f' 0b010 {0b0000010}')
+
+###################################################
+###################   binary ops
+
+x = 0b01010101
+y = 0b11111111
+print(f' y is {y}  x is {x}  ')   # y is 255  x is 85
+
+
+############## bitshift LEFT <<      like mult by 2 for each position
+y = y << 1
+x = x << 1
+print(f' y is now {y}   & x is {x}')   # y is now 510   & x is 170
+
+# ANDing by b11111111   keeps y within 255 range of max value of 8-bit bin number
+y = 0b11111111
+y =  (y << 1) & y
+print(f' y is now {y}')  #   y is now 254
+
+
+############## bitshift right    like div by 2, takes floor of result
+x = 0b01010101
+y = 0b11111111
+print(f' y is {y}  x is {x}  ')   # y is 255  x is 85
+
+
+y = y >> 1      # would be exactly 127.5
+x = x >> 1      # would be exactly 42.5
+print(f' y is now {y}   & x is {x}')    #  y is now 127   & x is 42
+
+
+##############  bitwise AND
+x = 0b01100001
+y = 0b11111111
+print(f' y is {y}  x is {x}  ')   # y is 255  x is 97 
+
+and_result = x & y
+print(f' and result {and_result}')   #  and result 97
