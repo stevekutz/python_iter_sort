@@ -111,7 +111,48 @@ print(f' y is now {y}   & x is {x}')    #  y is now 127   & x is 42
 ##############  bitwise AND
 x = 0b01100001
 y = 0b11111111
-print(f' y is {y}  x is {x}  ')   # y is 255  x is 97 
+z = 0b11001100
+print(f' y is {y}  x is {x}  z is {z}')   #  y is 255  x is 97  z is 204
 
 and_result = x & y
 print(f' and result {and_result}')   #  and result 97
+
+
+def find_set_indices(bin_val):
+    pos = [1, 2, 4, 8, 16, 32, 64, 128]
+    result = []
+
+    for i  in range(8):
+        if bin_val & pos[i] != 0:
+            result.append(i)
+
+    return result        
+
+print(find_set_indices(x))  # [0, 5, 6]
+print(find_set_indices(z))  # [2, 3, 6, 7] 
+
+
+###############  bitwise OR
+x = 0b01100001
+y = 0b11111111
+z = 0b11001100
+print(f' y is {y}  x is {x}  z is {z}')   #  y is 255  x is 97  z is 204
+
+
+# list_ones = [val for val in find_set_indices(x)].extend(val for val in find_set_indices(z))  # returns None
+
+list_ones = [val for val in find_set_indices(x)]
+list_ones.extend(val for val in find_set_indices(z))
+set_list = set()
+[set_list.add(s) for s in list_ones]
+
+list_ones_sorted = sorted(set_list, reverse = True)
+# list_ones_sorted = sorted(list(set_list.add(s) for s in list_ones), reverse = True)     # Nope
+
+print(f' list_ones    {list_ones}')               # list_ones    [0, 5, 6, 2, 3, 6, 7]
+print(f' list_ones_sorted \t\t {list_ones_sorted}')    # list_ones_sorted   [7, 6, 6, 5, 3, 2, 0]
+
+or_vals = x | z
+find_set_indices(or_vals)
+print(f' \t\t bin(or_vals) {bin(or_vals)}   ')
+print(f' find_set_indices(or_vals)       {sorted(find_set_indices(or_vals), reverse = True)}  ')
