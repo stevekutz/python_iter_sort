@@ -10,24 +10,27 @@ ops = {'+': operator.add,
        '%' : operator.mod,
        '|' : operator.or_,
        '^' : operator.xor,
-
+       '~' : operator.inv, 
         }
 
 
 def math_op(val_a, val_b, op = None):
-    # if op in ops:
-        
+    if op != None:      
         result =  ops[op](val_a, val_b)
         # return f' {val_a} {ops[op]} {val_b}'
         return result
 
-    # for k in ops.keys():
-    #     return f' {val_a} {op} {val_b} =  {ops[k](val_a, val_b)}  '
+    print(f'\n Do all ops')
+    for k in ops.keys():
+        if k == '~':
+            print(f'{str(ops[k]).split()[-1][:-1]} : {k} {val_a} = {ops[k](val_a)}')
+        else:    
+            print(f'{str(ops[k]).split()[-1][:-1]} :  {val_a} {k} {val_b} =  {ops[k](val_a, val_b)}')
 
 
-print(math_op(2, 4, '+'))    # 6  
-print(math_op(2, 4, '-'))    # -2
-print(math_op(2, 4, '*'))    # 8   
+# print(math_op(2, 4, '+'))    # 6  
+# print(math_op(2, 4, '-'))    # -2
+# print(math_op(2, 4, '*'))    # 8   
 
-# print(math_op(2,4))
+math_op(2,4)
 
