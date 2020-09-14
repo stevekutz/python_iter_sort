@@ -12,7 +12,7 @@ target = 9
 # target = 8
 
 # find complement
-# verify if in dictionary, if Y, then complement adn current = target
+# verify if in dictionary, if Y, then complement and current = target
 # otherwise, store complement value in case some other current matches with it to = target
 
 def two_sum(num_list, target):
