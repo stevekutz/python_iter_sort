@@ -193,7 +193,7 @@ print(f' sorted_obj {sorted_obj}')
 # print(my_list)  # [1, 2, 5, 8]
 # print(result)   # [1, 2, 5, 8]
 
-
+############################################    sorting list of dict items
 # # build list of dict items
 # def daily_activity(order, day, activity):
 #          return {'order': order, 'day': day, 'activity': activity}
@@ -210,11 +210,11 @@ print(f' sorted_obj {sorted_obj}')
 # print(activities)  # prints in one wrapable row
 # #  [{'order': 0, 'day': 'Mon', 'activity': 'Baseball'}, {'order': 1, 'day': 'Tue', 'activity': 'Swim'}, {'order': 2, 'day': 'Wed', 'activity': 'Soccer'}, {'order': 3, 'day': 'Thu', 'activity': 'Basketball'}, {'order': 4, 'day': 'Thu', 'activity': 'Dance'}, {'order': 5, 'day': 'Thu', 'activity': 'Football'}]
 
-
+######  Prints out list of dict items is easy to read format
 # def print_nice(val):
 #      for item in val:
 #           print(item)
-
+ 
 # print_nice(activities)
 # # {'order': 0, 'day': 'Mon', 'activity': 'Baseball'}
 # # {'order': 1, 'day': 'Tue', 'activity': 'Swim'}
@@ -223,7 +223,7 @@ print(f' sorted_obj {sorted_obj}')
 # # {'order': 4, 'day': 'Thu', 'activity': 'Dance'}
 # # {'order': 5, 'day': 'Thu', 'activity': 'Football'}
 
-# # to sort lsit of dict items by a key value  >> 'order'
+# # to sort list of dict items by a key value  >> 'order'
 # sorted_activities = sorted(activities, key= lambda x : x['order'], reverse = True)
 # print(f' sort by activities')
 # print_nice(sorted_activities)
@@ -234,7 +234,7 @@ print(f' sorted_obj {sorted_obj}')
 # # {'order': 1, 'day': 'Tue', 'activity': 'Swim'}
 # # {'order': 0, 'day': 'Mon', 'activity': 'Baseball'}
 
-# # to sort lsit of dict items by a key value  >> 'day'
+# # to sort list of dict items by a key value  >> 'day'
 # sorted_activities = sorted(activities, key= lambda x : x['day'], reverse = True)
 # print(f' sort by day')
 # print_nice(sorted_activities)

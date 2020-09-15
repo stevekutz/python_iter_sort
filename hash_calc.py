@@ -28,9 +28,25 @@ def math_op(val_a, val_b, op = None):
             print(f'{str(ops[k]).split()[-1][:-1]} :  {val_a} {k} {val_b} =  {ops[k](val_a, val_b)}')
 
 
-# print(math_op(2, 4, '+'))    # 6  
-# print(math_op(2, 4, '-'))    # -2
-# print(math_op(2, 4, '*'))    # 8   
+print(math_op(2, 4, '+'))    # 6  
+print(math_op(2, 4, '-'))    # -2
+print(math_op(2, 4, '*'))    # 8   
 
-math_op(2,4)
+#  math_op(2,4)
+
+
+
+# class My_Math():
+#     def __init__(self, ops):
+#         self.ops = ops = {  '+': operator.add,
+#                             '-': operator.sub,
+#                             '*': operator.mul, 
+#                             '&': operator.and_,
+#                             '<<' : operator.lshift,
+#                             '>>' : operator.rshift,
+#                             '%' : operator.mod,
+#                             '|' : operator.or_,
+#                             '^' : operator.xor,
+#                             '~' : operator.inv, 
+#                         }
 
