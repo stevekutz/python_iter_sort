@@ -1,4 +1,6 @@
-mlist = [[1, 2], [4, 5], [3, 6]]
+# mlist = [[1, 2], [4, 5], [3, 6]]
+mlist = [[1, 2, 5], [4, 5, 0], [3, 6, 8]]
+
 
 
 ##############  use itemgetter
@@ -11,12 +13,18 @@ sort_list = []
 
 #     mdict[i] = mlist[i] , mlist[i][0]
 
+
+
+#####   sort by smallest value from each list within list
 def sort_multdim_list(list, sort_index):
 
-    for i in range(len(mlist)):
-        mdict[i] = mlist[i] , mlist[i][0]
 
-    print(mdict)
+
+
+    for i in range(len(mlist)):
+        mdict[i] = sorted(mlist[i]) , mlist[i][0]
+
+    print(f' mdict  {mdict}  ')
 
     # temp_sort = sorted(mdict.items(), key = lambda x: x[sort_index])
     temp_sort = sorted(mdict.items(), key = itemgetter(sort_index))
