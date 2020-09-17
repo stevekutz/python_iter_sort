@@ -83,8 +83,13 @@ sort4 = list(item for item in sorted(mlist, key = lambda index: index[2]))
 print(f' by index 2 {sort4}') # ver 4 [[4, 5, 0], [1, 2, 5], [3, 6, 8]]
 
 
-
+mlist = [[3, 2, 9], [2, 1, 0], [4, 1, 2, 0]]
 print(f' \n\nsort each list within {[sorted(item) for item in mlist]}')
 # sort by lowest list val in a list of lists
 sort_5 = sorted([sorted(item) for item in mlist])
 print(f' sort by lowest within each list {sort_5}' )
+# [0, 1, 2], [0, 1, 2, 4], [2, 3, 9]]
+
+# Sorted will sort by first value in sublist
+new_list = sorted(mlist)
+print(f' new_list  {new_list} ')  # [[2, 1, 0], [3, 2, 9], [4, 1, 2, 0]]

@@ -80,4 +80,4 @@ c.math_calc(2,4)
 # will raise error
 # c.math_calc(2.1, 4)
 # c.math_calc(2, 4.1)
-c.math_calc('a', 'b')
+# c.math_calc('a', 'b')

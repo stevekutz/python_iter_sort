@@ -170,3 +170,16 @@ print(f' test_set {test_set} ')
 # verify if item is in set
 print(f"  '2' in test_set  {'2' in test_set} ")   # '2' in test_set  False 
 print(f" 2 in test_set {2 in test_set} ")   #    2 in test_set True
+
+
+########## SET COMPREHENSION !!!!
+test_list = [0,1,2,3]
+set_nums = set()
+#### add list item by item into set
+# {set4.add(s) for s in test_list}
+# print(f' >>>  set_4 {set4}')   # >>>  set_4 {0, 1, 2, 3, 10, 20}
+
+for item in test_list not in set_nums:
+    if set_nums.contains(item):
+        return False        
+    set_nums.add(item)
