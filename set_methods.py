@@ -179,7 +179,3 @@ set_nums = set()
 # {set4.add(s) for s in test_list}
 # print(f' >>>  set_4 {set4}')   # >>>  set_4 {0, 1, 2, 3, 10, 20}
 
-for item in test_list not in set_nums:
-    if set_nums.contains(item):
-        return False        
-    set_nums.add(item)

@@ -37,9 +37,10 @@ class BasicClass:
 class PizzaClass:
     def __init__(self, ingredients, size = None):
         self.ingredients = ingredients
+        self.size = size
 
         # sizes
-        self.size = {
+        self.size_init = {
                         'S' : '8 inch',
                         'M' : '12 inch',
                         'L' : '16 inch',
@@ -53,43 +54,70 @@ class PizzaClass:
         # for item in self.ingredients:
         #     print(f' \t {item}')   # TypeError: __str__ returned non-string (type NoneType)
 
+
     # By default, f-strings will use __str__(), 
     # but you can make sure they use __repr__() if you include the conversion flag !r
     #  AND commenting out __str__ ()
     def __repr__(self):
         return  f' reprPizza ({self.ingredients!r}, size: {self.size}  )'   
 
-    # use class methods as FACTORY FUNCTIONS(function that creates another obj) EVERYTHING in Python is an obj
+    # use class methods as FACTORY FUNCTION(function that creates another obj) EVERYTHING in Python is an obj
     @classmethod
     def margherita(cls):
+        # following line will cause error  >> name 'size_init' is not defined
+        # classmethod cannot see instance variable size_init
+        # print(f' classmethod can size size_init  {size_init}')
+        
+        print(f' Our Marherita pizza has:')
         return cls(['mozerella', 'tomatoes'])     
 
     @classmethod
     def prosciutto(cls):
         return cls(['mozerella', 'tomatoes', 'ham']) 
 
-
-    def get_size_diam(self):
-        return self.static_size('size')
-
-    # Will cause error when run with print(p.static_size('L'))
-    # NameError: name 'size' is not defined    
-    # @staticmethod
-    # def static_size(size_key):
-    #     return size[size_key]
+    
 
     # This can access class variables
     # 
     def instance_size(self, size_key):
-        return self.size[size_key]
+        print(f'___  in instance_size ')
+        return self.size_init[size_key]
+
+    # this should access static_size
+    def get_size_diam2(self):
+        print(f'  in get_size_diam2, passsing  {self.size} to static_size staticmethod')
+        return self.static_size(self.size)
+
+
+    @staticmethod
+    def static_size(size_key):
+        print(f' \t in static_method with passed in {size_key}')
+
+        # sizes
+        static_size =  {
+                            'S' : '8 inch',
+                            'M' : '12 inch',
+                            'L' : '16 inch',
+                            'XL' : '20 inch'
+                        }
 
 
 
-# print(PizzaClass.margherita())
-# print(PizzaClass.prosciutto())           
+        return static_size[size_key]
 
-print(PizzaClass.margherita())   # reprPizza (['mozerella', 'tomatoes'], size: {'S': '8 inch', 'M': '12 inch', 'L': '16 inch', 'XL': '20 inch'}  )
-# p = PizzaClass(['mushrooms, sausage', 'L'])
-# print(p.static_size('L'))
+        # this will cause >>  NameError: name 'init_size' is not defined  
+        # static method cannot see instance variables
+        # return init_size[size_key] 
 
-print(p.instance_size('L'))    # 16 inch
+# print(PizzaClass.margherita())   # reprPizza (['mozerella', 'tomatoes'], size: {'S': '8 inch', 'M': '12 inch', 'L': '16 inch', 'XL': '20 inch'}  )
+# p = PizzaClass(['mushrooms, sausage'], 'L')
+p = PizzaClass(['mushrooms, sausage'], 'L')
+print(p.static_size('XL'))   # 20 inch    >> Will call static with param `XL` regardless of class OR instance state
+
+print(p.instance_size('L'))    # 16 inch  >> this can access the instance variable `size_init`
+print(p.get_size_diam2())      # instance method can access instance state and pass that into staticmethod
+#   in get_size_diam2, passsing  L to static_size staticmethod
+#          in static_method with passed in L
+# 16 inch
+
+print(PizzaClass.margherita()) # reprPizza (['mozerella', 'tomatoes'], size: None  )
