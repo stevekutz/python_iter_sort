@@ -24,9 +24,9 @@ P - Idea #1 Iterate through each linked list, store into dict to keep track of d
             store numbers
 
             Add numbers:
-            add paying attention to values that add to 10, 
-            after building each build each num value,
-            return sum AS LINKED LIST
+            after finding sum as int,
+            return sum AS LINKED LIST(reverse order - insert at head)
+
 E - Syntax to call other method from within method requires stating instances
   - Returning Linked List required adding self.head variable
   - inserting at head makes reversing easier
@@ -105,6 +105,7 @@ class Solution:
         print(f' sum is {num1 + num2}')
         sum_str = str(num1 + num2)
         for ch in sum_str:
+            # add val to head
             sol_ll = ListNode(int(ch))
             sol_ll.next = self.head
             self.head = sol_ll
