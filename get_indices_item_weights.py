@@ -68,12 +68,12 @@ def get_indices_of_item_weights(weights, length, limit):
     return None   # if nothing found
 
 weights = [9]
-print(get_indices_of_item_weights(weights, 1, 9))  # None
+print(get_indices_of_item_weights(weights, 1, 9))  # None   >> returning tuple >> None
 
 
 weights= [4, 4]
-print(get_indices_of_item_weights(weights, 2, 8))   # [1,0]
+print(get_indices_of_item_weights(weights, 2, 8))   # [1,0]   >> returning tuple >> (1, 0)
 
 
 weights = [ 4, 6, 10, 15, 16 ]  # length = 5, limit = 21
-print(get_indices_of_item_weights(weights, len(weights), 21))   # [3,1]
+print(get_indices_of_item_weights(weights, len(weights), 21))   # [3,1]    >> returning (3, 1)
