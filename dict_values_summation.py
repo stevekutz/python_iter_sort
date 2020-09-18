@@ -15,6 +15,7 @@ ini_dict = [{'a':5, 'b':10, 'c':90},
 # printing initial dictionary 
 print ("initial dictionary", str(ini_dict)) 
 
+
 # sum the values with same keys 
 result = {} 
 for d in ini_dict: 
@@ -40,6 +41,8 @@ ini_dict = [{'a':5, 'b':10, 'c':90},
 
 # printing initial dictionary 
 print ("initial dictionary", str(ini_dict)) 
+
+
 
 # sum the values with same keys 
 counter = collections.Counter() 

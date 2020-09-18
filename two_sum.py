@@ -33,3 +33,45 @@ def two_sum(num_list, target):
      return index_list
 
 print(two_sum(num_list, target))    # [[1, 2], [4, 5], [3, 6]]       
+
+
+
+#####  Another way
+class Solution:
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        h = {}
+        for i, num in enumerate(nums):
+            n = target - num
+            if n not in h:
+                h[num] = i
+            else:
+                return [h[n], i]
+
+# num_list = [4, 4]
+# target = 8
+
+
+num_list = [6, 7, 2, -2, -4,  3, 11 ]
+
+sol = Solution()
+print(sol.twoSum(num_list, 9))    # [1, 2]            
+
+
+# Another way to PROVIDE VALUES not INDICES
+def two_sum_2(nums, target):
+     result = set()
+     hash_table = {}
+     for index, num in enumerate(nums):
+          hash_table[num] = index
+     for index, num in enumerate(nums):
+          complement = target - num
+          if complement in hash_table and index < hash_table[complement]:
+               result.add((num, complement))
+     return list(result)
+
+print(two_sum_2(num_list, 9))    # [(-2, 11), (6, 3), (7, 2)]
