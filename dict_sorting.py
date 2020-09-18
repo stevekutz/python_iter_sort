@@ -17,7 +17,8 @@ def dictionary():
     # iterkeys() returns an iterator over the 
     # dictionary’s keys. 
     for i in sorted (key_value.keys()) : 
-        print(i, end = " ") 
+        # print(i, end = " ") 
+        print(f' i is {i}')
 
 # def main(): 
 # 	# function calling 

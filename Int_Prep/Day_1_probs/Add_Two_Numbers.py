@@ -31,7 +31,7 @@ E - Syntax to call other method from within method requires stating instances
   - Returning Linked List required adding self.head variable
   - inserting at head makes reversing easier
 R - Could make linked list creation into its own function
-  - Not seeing how LeetCode builds Linked List requried building my own Linked List class 
+  - Not seeing how LeetCode builds Linked List required building my own Linked List class 
     for debugging
 """
 
@@ -94,11 +94,10 @@ class Solution:
 
     def addTwoNumbers(self, l1, l2):
         # get int values from each linked list
-        # num1 = Solution.str_num(Solution, l1)
-        # num2 = Solution.str_num(Solution, l2)
 
-        num1 = Solution.str_num(self, l1)
-        num2 = Solution.str_num(self, l2)
+        num1 = self.str_num(l1)
+        num2 = self.str_num(l2)
+
         sol_ll = (ListNode)
 
         # return sum as Linked List

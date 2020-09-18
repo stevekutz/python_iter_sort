@@ -88,6 +88,19 @@ class PizzaClass:
         print(f'  in get_size_diam2, passsing  {self.size} to static_size staticmethod')
         return self.static_size(self.size)
 
+    def add_ingredient(self, new_ingredient):
+        self.ingredients.append(new_ingredient)
+
+        # upper_now = self.uppercase_ingredient(new_ingredient)
+        # upper_now = PizzaClass.uppercase_ingredient(self, new_ingredient)
+        upper_now = PizzaClass.uppercase_ingredient(PizzaClass, new_ingredient)
+
+        self.ingredients.append(upper_now)
+        print(f' ingredients now {self.ingredients}')
+        return self.ingredients
+
+    def uppercase_ingredient(self, str_val):
+        return str_val.upper()
 
     @staticmethod
     def static_size(size_key):
@@ -121,3 +134,6 @@ print(p.get_size_diam2())      # instance method can access instance state and p
 # 16 inch
 
 print(PizzaClass.margherita()) # reprPizza (['mozerella', 'tomatoes'], size: None  )
+
+
+print(p.add_ingredient('Octupus'))
