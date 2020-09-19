@@ -51,18 +51,20 @@ import sys
 
 # Complete the sockMerchant function below.
 def sockMerchant(n, ar):
-    sock_count = set()
-    num_pairs = 0
+    sock_seen = set()
+    total_pairs = 0
 
     for sock_color in ar:
-        if sock_color in sock_count:
-            num_pairs += 1
-            sock_count.remove(sock_color)
+        if sock_color in sock_seen:
+            # already exits, now we have a pair, add to total_pairs
+            total_pairs += 1
+            sock_seen.remove(sock_color)
 
         else:
-            sock_count.add(sock_color)    
+            # add single sock type to set
+            sock_seen.add(sock_color)    
 
-    return num_pairs        
+    return total_pairs        
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
