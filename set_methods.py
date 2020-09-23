@@ -33,6 +33,9 @@ print(f' dict_set[2] is {dict_set[2]}')   # dict_set[2] is {3}
 # my_set = { 1, 2, 3, 4, test_set}
 # print(f' my_set  {my_set}')   # TypeError: unhashable type: 'set'
 
+new_set.update(my_list)
+print(f' new_set   {new_set} ')
+
 
 # CREATE a set with nums, tuple, and str
 my_set = {1, 2, 3, (100, 200), 'apple'}
