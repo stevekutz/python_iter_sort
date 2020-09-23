@@ -51,11 +51,11 @@ def search_ra(nums, target):
     # if target not in all_nums:
     #     return -1
     
-
-
     # for i in range(len(nums)):
     #     if nums[i] == target:
     #         return i
+
+
 
 
     # n_dict = dict( (k,v) for k,v in enumerate(nums))
@@ -75,3 +75,12 @@ def search_ra(nums, target):
 
 
 print(search_ra(nums, target))            
+
+
+class Solution(object):
+    def search(self, nums, target):
+
+        if target in nums:
+            return nums.index(target)
+        else:
+            return -1
