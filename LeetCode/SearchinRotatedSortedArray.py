@@ -37,25 +37,25 @@ Output: -1
         
 #         for i in enumerate()
 
-# nums = [4,5,6,7,0,1,2]
-# target = 0
+nums = [4,5,6,7,0,1,2]
+target = 0
 
-nums = [1, 3]
-target = 3
+# nums = [1, 3]
+# target = 3
 
 
 def search_ra(nums, target):
-    all_nums = set()
-    all_nums.update(nums)
+    # all_nums = set()
+    # all_nums.update(nums)
     
-    if target not in all_nums:
-        return -1
+    # if target not in all_nums:
+    #     return -1
     
 
 
-    for i in range(len(nums)):
-        if nums[i] == target:
-            return i
+    # for i in range(len(nums)):
+    #     if nums[i] == target:
+    #         return i
 
 
     # n_dict = dict( (k,v) for k,v in enumerate(nums))
@@ -67,6 +67,11 @@ def search_ra(nums, target):
     #     if n_dict[k] == target:
     #         return k
 
+
+    if target in nums:
+        return nums.index(target)
+    else:
+        return -1
 
 
 print(search_ra(nums, target))            
