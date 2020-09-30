@@ -33,12 +33,12 @@ print(f' counts_2 is {counts_2}')
 
 print(f' elements in counts_2 : {list(counts_2.elements())}')
 
-#  list comprehension from counts_2
-list_counts2 = list(x for x in counts_2.elements())
-print(f' list_counts_2 {list_counts2}')
+# #  list comprehension from counts_2
+# list_counts2 = list(x for x in counts_2.elements())
+# print(f' list_counts_2 {list_counts2}')
 
-for i in range(101):
-    print(f' list_nums[i] {list_nums[i]}     list_counts2[i] {list_counts2[i]}')
+# for i in range(101):
+#     print(f' list_nums[i] {list_nums[i]}     list_counts2[i] {list_counts2[i]}')
 # list_nums[i] 5     list_counts2[i] 5       .elements groups similar items together
 #  list_nums[i] 7     list_counts2[i] 5
 #  list_nums[i] 4     list_counts2[i] 5

@@ -15,5 +15,7 @@ def is_palindrome(val):
     return s == temp;
 
 
-is_palindrome(2112)
+is_palindrome(2112)  # True 
 # is_palindrome(100101001)
+is_palindrome(88)    # True
+is_palindrome(2)     # True
