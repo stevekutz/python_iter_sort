@@ -31,7 +31,11 @@ for _ in range(100):
 counts_2 = Counter(list_nums)        
 print(f' counts_2 is {counts_2}')
 
-print(f' elements in counts_2 : {list(counts_2.elements())}')
+most_comm = Counter(list_nums).most_common(1)
+
+print(f' most common is {most_comm[0][0]} with count of {most_comm[0][1]} ')
+
+# print(f' elements in counts_2 : {list(counts_2.elements())}')
 
 # #  list comprehension from counts_2
 # list_counts2 = list(x for x in counts_2.elements())
