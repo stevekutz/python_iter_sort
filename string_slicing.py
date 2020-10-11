@@ -27,14 +27,7 @@ my_dict = {}
 # print(f' {my_dict}')        
 
 
-# print(f' letters[start:]')
 
-# k = 0
-# for k in range(k,end):
-#     for i in range(start,k + 1):
-#         if i + k < end:
-#             substr = n_letters[i:i + k]
-#             print(f' n_letters[i:end:k]  {substr}')
 
 print(f' n_letters   {n_letters}')
 
@@ -46,13 +39,8 @@ print(f' substr_c {substr_c}    {len(substr_c)}')
 
 substr_1 = list()
 
-# for k in range(len(n_letters)):
-#     for i in range(k + 1, len(n_letters) + 1):
-#         substr_1.append(n_letters[k:i])
-#         # print(f' {n_letters[k:i]}')
 
 for k in range(len(n_letters)):
-    print(f' k {n_letters[k]}')
     for i in range(k + 1, len(n_letters) + 1):
         
         substr_1.append(n_letters[k:i])
@@ -64,25 +52,25 @@ print(f' substr_1 {substr_1}    {len(substr_1)}')
 
 s = "abcabcbb"
 
-def longest_substring_set(str):
+# def longest_substring_set(str):
 
-    list_str = []
-    max_len = 0
+#     list_str = []
+#     max_len = 0
 
-    for ch in str:
-        if ch in list_str:
-            del list_str[0:list_str.index(ch) + 1]
+#     for ch in str:
+#         if ch in list_str:
+#             del list_str[0:list_str.index(ch) + 1]
         
-        list_str.append(ch)
+#         list_str.append(ch)
 
-        if len(list_str) > max_len:
-            print(f' {list_str}')
-            max_len = len(list_str)
+#         if len(list_str) > max_len:
+#             print(f' {list_str}')
+#             max_len = len(list_str)
 
-    return max_len
+#     return max_len
 
 
-print(longest_substring_set(s))
+# print(longest_substring_set(s))
 
 
 # print(f' my_dict   {my_dict}')
