@@ -37,6 +37,12 @@ for k in dict_nums.keys():
 print(f' \t LOOP key_list: {key_list2} ')  # ex LOOP value_list: [' val== -18', ' val== 4', ' val== 12', ' val== 14', ' val== 20', ' val== 17']
 
 
+#  use a set to get set of keys from a dict without iteration
+set_keys = set()
+set_keys.update(dict_nums)
+print(f' set of keys from dict_nums  {set_keys}  ')        # set of keys from dict_nums  {0, 1, 2, 3, 4, 5} 
+
+
 # list comprehension to build list of values
 value_list = [f" val = {val}" for val in dict_nums.values() ]
 print(f' list COMP {value_list}')  # ex list COMP kv ['i[0] 0 , i[1] -18 ', 'i[0] 1 , i[1] 4 ', 'i[0] 2 , i[1] 12 ', 'i[0] 3 , i[1] 14 ', 'i[0] 4 , i[1] 20 ', 'i[0] 5 , i[1] 17 ']
@@ -70,7 +76,7 @@ list_str = ['first', 'second', 'third', 'fourth']
 list_nums2 = [1, 2, 3, 4]
 
 zipObj = zip(list_str, list_nums2)   # iterates through list and returns tuples
-print(f' zipObj {zipObj}')
+print(f' zipObj {zipObj}')         # zipObj <zip object at 0x7f84e0513e40>
 
 dict_merge = dict(zipObj)
 print(f' dict_merge {dict_merge}')      # dict_merge {'first': 1, 'second': 2, 'third': 3, 'fourth': 4}
@@ -84,11 +90,10 @@ list_tuples = [("1st", 1), ("2nd", 2), ("3rd", 3) ]
 dict_tuples = dict(list_tuples)
 print(f' dict_tuples  {dict_tuples}')
 
-# function to get keys
-# def get_keys(**kw):
-#     print(f' kw.keys {kw.keys()} ')
+# function to get keys from a tuple
+def get_keys(**kw):
+    print(f' kw.keys {kw.keys()} ')
 
-# get_keys( a=1, b=2)  # kw.keys dict_keys(['a', 'b'])
-
+get_keys( a=1, b=2)  # kw.keys dict_keys(['a', 'b'])
 
         

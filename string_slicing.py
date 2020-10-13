@@ -50,7 +50,30 @@ for k in range(len(n_letters)):
 print(f' substr_1 {substr_1}    {len(substr_1)}')
 
 
-s = "abcabcbb"
+substr_all = []
+
+for k in range(len(n_letters)):
+    for i in range(k + 1, len(n_letters) + 1):
+        
+        new_sub = n_letters[k:i]
+        if new_sub not in substr_all:
+            substr_all.append(n_letters[k:i])
+        # print(f' {n_letters[k:i]}')
+
+
+print(f' substr_all        {substr_all}')
+
+
+# must import
+from itertools import combinations
+substr_all_iter = [n_letters[i:k] for i,k in combinations(range(len(n_letters) + 1), r = 2)]
+
+print(f' substr_all_iter   {substr_all_iter}')
+
+
+
+
+# s = "abcabcbb"
 
 # def longest_substring_set(str):
 

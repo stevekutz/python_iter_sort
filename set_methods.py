@@ -10,7 +10,7 @@ print(f' new_set is an empty set:  {new_set}')  # new_set is an empty set:  set(
 
 # CREATE set using curly craces
 my_dict = {"one": 1}
-print(f'type(my_dict)  {type(my_dict)}  ')
+print(f'type(my_dict)  {type(my_dict)}  ')   # type(my_dict)  <class 'dict'> 
 
 my_list = [10, 20]
 
@@ -33,13 +33,22 @@ print(f' dict_set[2] is {dict_set[2]}')   # dict_set[2] is {3}
 # my_set = { 1, 2, 3, 4, test_set}
 # print(f' my_set  {my_set}')   # TypeError: unhashable type: 'set'
 
+
+######  Trying to add list to set,    the set must already be declared
 new_set.update(my_list)
-print(f' new_set   {new_set} ')
+print(f' new_set   {new_set} ')    # new_set   {10, 20}
+
+new_set_2 = set().update(my_list)
+print(f' new_set_2    {new_set_2}')  # None
+
+new_set_3 = set()
+new_set_3.update(my_list)
+print(f' new_set_3  {new_set_3}')   # new_set_3  {10, 20}
 
 
 # CREATE a set with nums, tuple, and str
 my_set = {1, 2, 3, (100, 200), 'apple'}
-print(f' my_set is {my_set} ') #  my_set is {1, 2, 3, (100, 200), 'apple'}
+print(f' my_set is {my_set} ')      #  my_set is {1, 2, 3, (100, 200), 'apple'}
 
 # list_set = [ type(val) for val in set]
 # print(list_set)  # TypeError: 'type' object is not iterable
@@ -153,18 +162,18 @@ print(f" b is >> {b}")  # b is >> {'a', 'd', 'b'}
 # print(f' UPDATE e_set : {e_set} ')   # UPDATE e_set : {99, (0, 1, 2), 11, 22, 88}
 
 # ### !!! UPDATE >> allows adding lists & sets  BUT only takes key from dict (tried to CONVERT to an iterable sequence ) !!
-# list_1 = ['a', 'b']
-# list_2 = [10, 20 ,30]
-# dict_1 = {'first': 'ONE', 'second': 'TWO'}
-# set_u = {-1,-2}
+list_1 = ['a', 'b']
+list_2 = [10, 20 ,30]
+dict_1 = {'first': 'ONE', 'second': 'TWO'}
+set_u = {-1,-2}
 
 # # UPDATE showing adding of lists, dict keys, and another set
-# e_set2 = set()
-# e_set2.update(list_1,list_2, dict_1, set_u)
-# print(f' UPDATE e_set2  {e_set2}')   # UPDATE e_set2  {'first', 10, 'b', 'second', 20, 'a', -1, -2, 30}
+e_set2 = set()
+e_set2.update(list_1,list_2, dict_1, set_u)
+print(f' UPDATE e_set2  {e_set2}')   # UPDATE e_set2  {'first', 10, 'b', 'second', 20, 'a', -1, -2, 30}
 
-# # .subset    tests if  set is subset
-# print(f' set_u.issubset(e_set2) {set_u.issubset(e_set2)}')   # set_u.issubset(e_set2) True
+# .subset    tests if  set is subset
+print(f' set_u.issubset(e_set2) {set_u.issubset(e_set2)}')   # set_u.issubset(e_set2) True
 
 
 # Redfine set 
@@ -175,10 +184,10 @@ print(f"  '2' in test_set  {'2' in test_set} ")   # '2' in test_set  False
 print(f" 2 in test_set {2 in test_set} ")   #    2 in test_set True
 
 
-########## SET COMPREHENSION !!!!
+########## SET COMPREHENSION to add list to a set   !!!!
 test_list = [0,1,2,3]
 set_nums = set()
 #### add list item by item into set
-# {set4.add(s) for s in test_list}
-# print(f' >>>  set_4 {set4}')   # >>>  set_4 {0, 1, 2, 3, 10, 20}
+{set4.add(s) for s in test_list}
+print(f' >>>  set_4 {set4}')   # >>>  set_4 {0, 1, 2, 3, 10, 20}
 

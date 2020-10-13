@@ -11,25 +11,25 @@ str_val = "Hello"
 
 # # print(reverse(str_val))    # olleH
 
-####################################################
-# Using recursion
-def reverse_r(x):
+# ####################################################
+# # Using recursion
+# def reverse_r(x):
 
-    # end condition
-    if len(x) == 0:
-        return x
+#     # end condition
+#     if len(x) == 0:
+#         return x
 
-    else:
-        print(f' x[1:]>> {x[1:]}  +  x[0] {x[0]}')
-        return reverse_r( x[1:]) + x[0]
+#     else:
+#         print(f' x[1:]>> {x[1:]}  +  x[0] {x[0]}')
+#         return reverse_r( x[1:]) + x[0]
 
-print(reverse_r(str_val))        
-#  x[1:]>> ello  +  x[0]>> H = Hello
-#  x[1:]>> llo  +  x[0]>> e = ello
-#  x[1:]>> lo  +  x[0]>> l = llo
-#  x[1:]>> o  +  x[0]>> l = lo
-#  x[1:]>>   +  x[0]>> o = o
-# olleH
+# print(reverse_r(str_val))        
+# #  x[1:]>> ello  +  x[0]>> H = Hello
+# #  x[1:]>> llo  +  x[0]>> e = ello
+# #  x[1:]>> lo  +  x[0]>> l = llo
+# #  x[1:]>> o  +  x[0]>> l = lo
+# #  x[1:]>>   +  x[0]>> o = o
+# # olleH
 
 
 
@@ -105,26 +105,29 @@ print(reverse_r(str_val))
 
 
 
-####################################################
+# ###################################################
 # reverse a string using reversed()  as iterator
 
 # Function to reverse a string 
-#### SEPARATOR.join(LIST_NAME) merges contents of a list into a string
-#### reversed()
-# reversed() doesn't actually reverse anything, it merely returns an object 
+# ### SEPARATOR.join(LIST_NAME) merges contents of a list into a string
+# ### reversed()
+# reversed() doesn't actually reverse anything, it merely returns the reversed iterator object  
 # that can be used to iterate over the container's elements in reverse order.
 
-# def reverse_f(string): 
-# 	string = "".join(reversed(string)) 
-# 	return string 
+def reverse_f(string):
+    print(f' not joined    {list(reversed(s))}')
+    string = "".join(reversed(string)) 
+    return string 
 
-#     # just returns function obj
-#     # sol =  reversed(string)
-#     # return sol
+    # just returns function obj
+    # sol =  reversed(string)
+    # return sol
 
 
-# s = "Hello"
-# print(reverse_f(s))   # olleH
+s = "Hello"
+print(reverse_f(s))   # olleH
+
+print(f' reversed iterator object returned    {reversed(s)}') 
 
 ####################################################
 # # reverse a string using a list comprehension

@@ -25,6 +25,8 @@ for item in nums:
 ###  generate some long lists of random nums
 list_nums = []
 
+
+## the _ is not important enough to define in a variable to be used inside the for loop, therefore, loop just repeats 100 times
 for _ in range(100):
         list_nums.append(randint(0, 10))
 
