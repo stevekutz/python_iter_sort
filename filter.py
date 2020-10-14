@@ -45,14 +45,33 @@ print(f' {is_odd(num_val)}')
 ### filter functions returns iterator obj, assigned to sol here
 sol = filter(is_odd, num_list)
 print(f' sol is {sol}')   # sol is <filter object at 0x7fd8ed7698b0>
+print(f' sol converted to list is   {list(sol)}')
+# sol converted to list is   [2, 4, 6, 8]
 
-#### convert items is iterator into a tuple
+
+from itertools import filterfalse
+sol_2 = filterfalse(lambda x: x % 2, num_list)
+print(f' sol_2 is  {sol_2}')     # sol_2 is  <itertools.filterfalse object at 0x7f882c2ca0d0>
+print(f' sol_2 converted to list is   {list(sol_2)}')
+# sol_2 converted to list is   [2, 4, 6, 8]
+
+
+
+#### convert items from returned iterator into a tuple
 sol_tup = tuple(sol)
 print(f' sol_tup   {sol_tup}')  # (2, 4, 6, 8)
 
+
+#### convert items from returned iterator into a set
 sol_set = set()
 sol_set.update('123')
 print(f' sol_set returns    {sol_set} ')    # sol_set returns    {'2', '1', '3'}   
+
+
+
+
+
+
 
 
 
