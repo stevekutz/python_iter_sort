@@ -1,12 +1,12 @@
 from collections import Counter
 from random import randint
 
-nums = [1,3,4,2,2]
+nums = [1,3,4,2,2,1]
 dups = set()
 
 counts = Counter(nums)
 
-print(counts)
+print(f' counts   {counts} ')
 
 # for item in counts.items():
 #     if item[1] > 1:
@@ -20,7 +20,7 @@ for item in nums:
         print(f' dup item is {item}')   
         break 
 
-
+print(f' dups {dups}')
 
 ###  generate some long lists of random nums
 list_nums = []

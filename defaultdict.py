@@ -44,12 +44,12 @@ print(f' l_dict.keys()   {l_dict.keys()} \n')
 ##################################  setting to int 
 str_val = ' Connecticut'
 i_dict = defaultdict(int)
-
+2
 ###### ITERATING    through string for k
 for k in str_val.upper():
     i_dict[k] += 1
 
-print(f' i_dict.items()   {i_dict.items()} ')
+print(f' SORTED i_dict.items().sort()   {i_dict.items()} ')
 print(f' i_dict.keys()     {i_dict.keys()}\n\n')
 #  i_dict.items()   dict_items([(' ', 1), ('C', 3), ('O', 1), ('N', 2), ('E', 1), ('T', 2), ('I', 1), ('U', 1)]) 
 #  i_dict.keys()     dict_keys([' ', 'C', 'O', 'N', 'E', 'T', 'I', 'U'])
